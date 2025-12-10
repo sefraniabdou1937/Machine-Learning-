@@ -15,4 +15,6 @@ Lancer l'application :Bashstreamlit run app.py
 ├── requirements.txt      # Liste des librairies
 ├── PL.ipynb              # Notebook de recherche & exploration
 └── rapport.docx          # Rapport d'analyse complet
-👤 Auteur Abderrahmane Sefrani Projet réalisé dans le cadre d'une étude sur l'application du Machine Learning au Football (2024).
+👤 Auteur Abderrahmane Sefrani Projet réalisé dans le cadre d'une étude sur l'application du Machine Learning au Football (2024).Comment l'ajouter à votre GitHub ?Pour que cela s'affiche ainsi sur votre dépôt :Créez un fichier nommé README.md à la racine de votre dossier projet.Copiez-collez le code brut (celui que je vous ai donné dans la réponse précédente) à l'intérieur.Sauvegardez et faites un commit/push sur GitHub :Bashgit add README.md
+git commit -m "Ajout du README officiel"
+git push
