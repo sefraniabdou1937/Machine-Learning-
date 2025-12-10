@@ -1,20 +1,95 @@
-🦁 Premier League Analytics ProPL Analytics Pro est une application web interactive développée avec Streamlit. Elle combine l'Intelligence Artificielle (Régression Logistique) et les probabilités statistiques (Loi de Poisson) pour prédire les résultats des matchs de la Premier League (Saison 2023-2024).Ce projet ne se contente pas de donner un score : il explique comment la machine "réfléchit" et explore les limites mathématiques du sport.🚀 Fonctionnalités Clés🧠 Double Moteur Prédictif :Régression Logistique : Pour déterminer le vainqueur probable (Domicile / Extérieur).Loi de Poisson : Pour calculer la matrice de probabilité du score exact.📊 Dashboard Interactif : Visualisation des KPI, jauges de confiance et Heatmaps de scores.🧪 Le Laboratoire Technique : Une section pédagogique ("Blueprint") qui explique en temps réel comment les données brutes sont transformées en vecteurs mathématiques (Encodage, Normalisation, Pondération Lambda).📚 Storytelling Data : Intégration d'une analyse critique sur les limites du modèle (Marge d'erreur & Facteur humain).🛠️ Stack TechniqueLangage : PythonInterface : Streamlit (Design "White Theme" Premium)ML & Stats : Scikit-learn, Scipy (Poisson), Pandas, NumPyVisualisation : Plotly Express & Graph ObjectsArchitecture : Mermaid.js (pour les diagrammes de flux)⚙️ Installation et UtilisationSuivez ces étapes pour lancer le projet localement :Cloner le dépôt :Bashgit clone https://github.com/sefraniabdou1937/Machine-Learning-.git
-cd Machine-Learning-
-Créer un environnement virtuel (recommandé) :Bashpython -m venv venv
-# Sur Windows :
-venv\Scripts\activate
-# Sur Mac/Linux :
-source venv/bin/activate
-Installer les dépendances :Bashpip install -r requirements.txt
-Lancer l'application :Bashstreamlit run app.py
-📐 Méthodologie du ModèleLe modèle s'appuie sur un pipeline de données rigoureux :Feature Engineering :Team Encoding : Remplacement des noms d'équipes par leur taux de victoire historique.Rolling xG Efficiency : Analyse de la forme offensive sur les 5 derniers matchs (Buts réels vs Expected Goals).Attendance Normalized : Impact du public sur l'avantage à domicile.Calcul de Lambda ($\lambda$) :Une moyenne pondérée (60% forme récente / 40% saison) est utilisée pour estimer l'espérance de buts de chaque équipe avant de l'injecter dans la formule de Poisson :$$P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}$$🔮 Le Paradoxe "Wydad vs City"Une particularité de ce projet est sa section dédiée aux limites de l'IA."Les chiffres prédisent le probable, les hommes créent l'impossible."Le rapport inclus dans l'application analyse le cas théorique (devenu réalité partielle en 2025) d'un match Wydad AC vs Manchester City. Bien que le modèle donne un avantage statistique écrasant à City ("City reste City"), il reconnaît son incapacité à quantifier le "Facteur Humain" (Motivation, Transcendance, État moral) qui permet à des équipes comme le Wydad de déjouer les pronostics.📂 Structure du Projet📁 Machine-Learning-
-│
-├── app.py                # Application principale Streamlit
-├── model_final.pkl       # Modèle entraîné (Pickle)
-├── cleaned_data.csv      # Dataset nettoyé de la PL
-├── requirements.txt      # Liste des librairies
-├── PL.ipynb              # Notebook de recherche & exploration
-└── rapport.docx          # Rapport d'analyse complet
-👤 Auteur Abderrahmane Sefrani Projet réalisé dans le cadre d'une étude sur l'application du Machine Learning au Football (2024).Comment l'ajouter à votre GitHub ?Pour que cela s'affiche ainsi sur votre dépôt :Créez un fichier nommé README.md à la racine de votre dossier projet.Copiez-collez le code brut (celui que je vous ai donné dans la réponse précédente) à l'intérieur.Sauvegardez et faites un commit/push sur GitHub :Bashgit add README.md
-git commit -m "Ajout du README officiel"
-git push
+# 🦁 Premier League Analytics Pro
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue) ![Streamlit](https://img.shields.io/badge/Streamlit-App-ff4b4b) ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange) ![Status](https://img.shields.io/badge/Project-Active-green)
+
+**PL Analytics Pro** est une application web interactive développée avec Streamlit. Elle combine l'Intelligence Artificielle (Régression Logistique) et les probabilités statistiques (Loi de Poisson) pour prédire les résultats des matchs de la Premier League (Saison 2023-2024).
+
+Ce projet ne se contente pas de donner un score : il explique **comment** la machine "réfléchit" et explore les limites mathématiques du sport.
+
+---
+
+## 🚀 Fonctionnalités Clés
+
+* **🧠 Double Moteur Prédictif :**
+    * **Régression Logistique :** Pour déterminer le vainqueur probable (Domicile / Extérieur).
+    * **Loi de Poisson :** Pour calculer la matrice de probabilité du score exact.
+* **📊 Dashboard Interactif :** Visualisation des KPI, jauges de confiance et Heatmaps de scores.
+* **🧪 Le Laboratoire Technique :** Une section pédagogique ("Blueprint") qui explique en temps réel comment les données brutes sont transformées en vecteurs mathématiques (Encodage, Normalisation, Pondération Lambda).
+* **📚 Storytelling Data :** Intégration d'une analyse critique sur les limites du modèle (Marge d'erreur & Facteur humain).
+
+---
+
+## 🛠️ Stack Technique
+
+* **Langage :** Python
+* **Interface :** Streamlit (Design "White Theme" Premium)
+* **ML & Stats :** Scikit-learn, Scipy (Poisson), Pandas, NumPy
+* **Visualisation :** Plotly Express & Graph Objects
+* **Architecture :** Mermaid.js (pour les diagrammes de flux)
+
+---
+
+## ⚙️ Installation et Utilisation
+
+Suivez ces étapes pour lancer le projet localement :
+
+1.  **Cloner le dépôt :**
+    ```bash
+    git clone [https://github.com/sefraniabdou1937/Machine-Learning-.git](https://github.com/sefraniabdou1937/Machine-Learning-.git)
+    cd Machine-Learning-
+    ```
+
+2.  **Créer un environnement virtuel (recommandé) :**
+    ```bash
+    python -m venv venv
+    # Sur Windows :
+    venv\Scripts\activate
+    # Sur Mac/Linux :
+    source venv/bin/activate
+    ```
+
+3.  **Installer les dépendances :**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Lancer l'application :**
+    ```bash
+    streamlit run app.py
+    ```
+
+---
+
+## 📐 Méthodologie du Modèle
+
+Le modèle s'appuie sur un pipeline de données rigoureux :
+
+1.  **Feature Engineering :**
+    * **Team Encoding :** Remplacement des noms d'équipes par leur taux de victoire historique.
+    * **Rolling xG Efficiency :** Analyse de la forme offensive sur les 5 derniers matchs (Buts réels vs Expected Goals).
+    * **Attendance Normalized :** Impact du public sur l'avantage à domicile.
+2.  **Calcul de Lambda ($\lambda$) :**
+    * Une moyenne pondérée (60% forme récente / 40% saison) est utilisée pour estimer l'espérance de buts de chaque équipe avant de l'injecter dans la formule de Poisson :
+    $$P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}$$
+
+---
+
+## 🔮 Le Paradoxe "Wydad vs City"
+
+Une particularité de ce projet est sa section dédiée aux limites de l'IA.
+
+> *"Les chiffres prédisent le probable, les hommes créent l'impossible."*
+
+Le rapport inclus dans l'application analyse le cas théorique (devenu réalité partielle en 2025) d'un match **Wydad AC vs Manchester City**. Bien que le modèle donne un avantage statistique écrasant à City ("City reste City"), il reconnaît son incapacité à quantifier le "Facteur Humain" (Motivation, Transcendance, État moral) qui permet à des équipes comme le Wydad de déjouer les pronostics.
+
+---
+
+## 📂 Structure du Projet
+📁 Machine-Learning- │ ├── app.py # Application principale Streamlit ├── model_final.pkl # Modèle entraîné (Pickle) ├── cleaned_data.csv # Dataset nettoyé de la PL ├── requirements.txt # Liste des librairies ├── PL.ipynb # Notebook de recherche & exploration └── rapport.docx # Rapport d'analyse complet
+
+---
+
+## 👤 Auteur
+
+**Abderrahmane Sefrani**
+* Projet réalisé dans le cadre d'une étude sur l'application du Machine Learning au Football (2024).
